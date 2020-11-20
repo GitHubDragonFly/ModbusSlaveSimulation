@@ -9,6 +9,16 @@ Based on modified nModbus .NET 3.5 libraries, Copyright (c) 2006 Scott Alexander
 - Additional TextBox was added to allow for manual input of the serial port to be used (intended for Linux so tty0tty virtual ports could be accessed).
 - The library supports Masked Bit Write, function code 22 (0x16H).
 
+# Build
+All it takes is to:
+
+- Download and install Visual Studio community edition (ideally 2019).
+- Download and extract the zip file of this project.
+- Open this as an existing project in Visual Studio and, on the menu, do:
+  - Build/Build Solution (or press Ctrl-Shift-B).
+  - Debug/Start Debugging (or press F5) to run the app.
+- Locate created EXE file in this folder: /bin/Debug and copy it over to your preferred folder or Desktop.
+
 # License
 Licensed under MIT license - see the README.txt file inside the Resources folder.
 
