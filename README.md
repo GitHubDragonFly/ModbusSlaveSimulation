@@ -12,6 +12,9 @@ Based on modified nModbus .NET 3.5 libraries, Copyright (c) 2006 Scott Alexander
 # License
 Licensed under MIT license - see the README.txt file inside the Resources folder.
 
+# Trademarks
+Any and all trademarks, either directly or indirectly mentioned in this project, belong to their respective owners.
+
 # Useful Resources
 The forum of AdvancedHMI website, which is another open source project that has this app, its Mono version as well as its counterpart Modbus Master:
 
