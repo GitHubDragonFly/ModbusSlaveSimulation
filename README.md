@@ -17,7 +17,7 @@ All it takes is to:
 - Open this as an existing project in Visual Studio and, on the menu, do:
   - Build/Build Solution (or press Ctrl-Shift-B).
   - Debug/Start Debugging (or press F5) to run the app.
-- Locate created EXE file in this folder: /bin/Debug and copy it over to your preferred folder or Desktop.
+- Locate created EXE file in the /bin/Debug folder and copy it over to your preferred folder or Desktop.
 
 # License
 Licensed under MIT license - see the README.txt file inside the Resources folder.
