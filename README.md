@@ -6,7 +6,7 @@ Based on modified nModbus .NET 3.5 libraries, Copyright (c) 2006 Scott Alexander
 # Functionality
 - The values can be set before the connection is established.
 - For RTU / ASCIIoverRTU protocols, on a single PC, this simulator can use the help of the com0com Windows program to provide virtual serial port pairs.
-- Additional TextBox was added to allow for manual input of the serial port to be used (intended for Linux so tty0tty virtual ports could be accessed).
+- Additional TextBox allows manual input of the serial port (intended for Linux so tty0tty virtual ports could be accessed).
 - The library supports Masked Bit Write, function code 22 (0x16H).
 
 # Build
