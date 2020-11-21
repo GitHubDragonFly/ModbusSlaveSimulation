@@ -3,6 +3,8 @@ Windows app supporting Modbus RTU, TCP, UDP and ASCIIoverRTU protocols for simul
 
 Based on modified nModbus .NET 3.5 libraries, Copyright (c) 2006 Scott Alexander ( https://code.google.com/p/nmodbus/ ).
 
+Intended to be used as a quick testing tool. Can be tested with its counterpart [ModbusMaster](https://github.com/GitHubDragonFly/ModbusMaster).
+
 # Functionality
 - The values can be set before the connection is established.
 - For RTU / ASCIIoverRTU protocols, on a single PC, this simulator can use the help of the com0com Windows program to provide virtual serial port pairs.
