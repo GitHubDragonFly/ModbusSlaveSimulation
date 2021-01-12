@@ -1,5 +1,5 @@
 # ModbusSlaveSimulation
-Windows app supporting Modbus RTU, TCP, UDP and ASCIIoverRTU protocols for simulation.
+Standalone Windows app supporting Modbus RTU, TCP, UDP and ASCIIoverRTU protocols for simulation.
 
 Based on modified [nModbus](https://code.google.com/p/nmodbus/) .NET 3.5 libraries, Copyright (c) 2006 Scott Alexander.
 
