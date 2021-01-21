@@ -309,7 +309,7 @@ namespace ModbusSlaveSimulation
 		//CoilDiscretes (Digital Outputs - I/O Address Range 000000)
 		private void DataGridViewCD_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
 		{
-			if (e.RowIndex == -1 || e.ColumnIndex == 0)
+			if (e.RowIndex == -1 || e.ColumnIndex == 0 || (e.RowIndex == 4095 && e.ColumnIndex == 16))
 				return;
 
 			lblCellNumber.Text = (Convert.ToInt32(dgvCD.Rows[e.RowIndex].Cells[0].Value.ToString().Substring(0, 6)) + e.ColumnIndex - 1).ToString().PadLeft(6, '0');
@@ -317,7 +317,7 @@ namespace ModbusSlaveSimulation
 
 		private void DataGridViewCD_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
 		{
-			if (e.RowIndex == -1 || e.ColumnIndex == 0)
+			if (e.RowIndex == -1 || e.ColumnIndex == 0 || (e.RowIndex == 4095 && e.ColumnIndex == 16))
 				return;
 
 			dgvCD.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = Convert.ToInt32(!Convert.ToBoolean(dgvCD.Rows[e.RowIndex].Cells[e.ColumnIndex].Value));
@@ -327,7 +327,7 @@ namespace ModbusSlaveSimulation
 		//InputDiscretes (Digital Inputs - I/O Address Range 100000)
 		private void DataGridViewID_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
 		{
-			if (e.RowIndex == -1 || e.ColumnIndex == 0)
+			if (e.RowIndex == -1 || e.ColumnIndex == 0 || (e.RowIndex == 4095 && e.ColumnIndex == 16))
 				return;
 
 			lblCellNumber.Text = (Convert.ToInt32(dgvID.Rows[e.RowIndex].Cells[0].Value.ToString().Substring(0, 6)) + e.ColumnIndex - 1).ToString();
@@ -335,7 +335,7 @@ namespace ModbusSlaveSimulation
 
 		private void DataGridViewID_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
 		{
-			if (e.RowIndex == -1 || e.ColumnIndex == 0)
+			if (e.RowIndex == -1 || e.ColumnIndex == 0 || (e.RowIndex == 4095 && e.ColumnIndex == 16))
 				return;
 
 			dgvID.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = Convert.ToInt32(!Convert.ToBoolean(dgvID.Rows[e.RowIndex].Cells[e.ColumnIndex].Value));
@@ -345,7 +345,7 @@ namespace ModbusSlaveSimulation
 		//InputRegisters (Analog Inputs - I/O Address range 300000)
 		private void DataGridViewIR_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
 		{
-			if (e.RowIndex == -1 || e.ColumnIndex == 0 || (e.RowIndex == 6553 && e.ColumnIndex > 6))
+			if (e.RowIndex == -1 || e.ColumnIndex == 0 || (e.RowIndex == 6553 && e.ColumnIndex > 5))
 				return;
 
 			lblCellNumber.Text = (Convert.ToInt32(dgvIR.Rows[e.RowIndex].Cells[0].Value.ToString().Substring(0, 6)) + e.ColumnIndex - 1).ToString();
@@ -353,7 +353,7 @@ namespace ModbusSlaveSimulation
 
 		private void DataGridViewIR_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
 		{
-			if (e.RowIndex == -1 || e.ColumnIndex == 0 || (e.RowIndex == 6553 && e.ColumnIndex > 6))
+			if (e.RowIndex == -1 || e.ColumnIndex == 0 || (e.RowIndex == 6553 && e.ColumnIndex > 5))
 				return;
 
 			cellRowIndex = e.RowIndex;
@@ -386,7 +386,7 @@ namespace ModbusSlaveSimulation
 		//Holding Registers (Analog Outputs - I/O Address Range 400000)
 		private void DataGridViewHR_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
 		{
-			if (e.RowIndex == -1 || e.ColumnIndex == 0 || (e.RowIndex == 6553 && e.ColumnIndex > 6))
+			if (e.RowIndex == -1 || e.ColumnIndex == 0 || (e.RowIndex == 6553 && e.ColumnIndex > 5))
 				return;
 
 			lblCellNumber.Text = (Convert.ToInt32(dgvHR.Rows[e.RowIndex].Cells[0].Value.ToString().Substring(0, 6)) + e.ColumnIndex - 1).ToString();
@@ -394,7 +394,7 @@ namespace ModbusSlaveSimulation
 
 		private void DataGridViewHR_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
 		{
-			if (e.RowIndex == -1 || e.ColumnIndex == 0 || (e.RowIndex == 6553 && e.ColumnIndex > 6))
+			if (e.RowIndex == -1 || e.ColumnIndex == 0 || (e.RowIndex == 6553 && e.ColumnIndex > 5))
 				return;
 
 			cellRowIndex = e.RowIndex;
@@ -438,13 +438,20 @@ namespace ModbusSlaveSimulation
 
 					for (int j = 0; j <= 16; j++)
 					{
+						if (i == 4095 && j > 15)
+							break;
+
 						if (j == 0)
 						{
-							dgvCD.Rows[i].Cells[j].Value = "0" + (16 * i + 1).ToString().PadLeft(5, '0') + "-" + "0" + (16 * i + 16).ToString().PadLeft(5, '0');
+							//Show address range up to 065535
+							if (i == 4095)
+								dgvCD.Rows[i].Cells[j].Value = "0" + (16 * i + 1).ToString().PadLeft(5, '0') + "-" + "0" + (16 * i + 15).ToString().PadLeft(5, '0');
+							else
+								dgvCD.Rows[i].Cells[j].Value = "0" + (16 * i + 1).ToString().PadLeft(5, '0') + "-" + "0" + (16 * i + 16).ToString().PadLeft(5, '0');
 						}
 						else
 						{
-							if (dataStore.CoilDiscretes[i * 16 + j - 1])
+							if (dataStore.CoilDiscretes[i * 16 + j])
 								dgvCD.Rows[i].Cells[j].Value = 1;
 							else
 								dgvCD.Rows[i].Cells[j].Value = 0;
@@ -467,13 +474,20 @@ namespace ModbusSlaveSimulation
 
 					for (int j = 0; j <= 16; j++)
 					{
+						if (i == 4095 && j > 15)
+							break;
+
 						if (j == 0)
 						{
-							dgvID.Rows[i].Cells[j].Value = "1" + (16 * i + 1).ToString().PadLeft(5, '0') + "-" + "1" + (16 * i + 16).ToString().PadLeft(5, '0');
+							//Show address range up to 165535
+							if (i == 4095)
+								dgvID.Rows[i].Cells[j].Value = "1" + (16 * i + 1).ToString().PadLeft(5, '0') + "-" + "1" + (16 * i + 15).ToString().PadLeft(5, '0');
+							else
+								dgvID.Rows[i].Cells[j].Value = "1" + (16 * i + 1).ToString().PadLeft(5, '0') + "-" + "1" + (16 * i + 16).ToString().PadLeft(5, '0');
 						}
 						else
 						{
-							if (dataStore.InputDiscretes[i * 16 + j - 1])
+							if (dataStore.InputDiscretes[i * 16 + j])
 								dgvID.Rows[i].Cells[j].Value = 1;
 							else
 								dgvID.Rows[i].Cells[j].Value = 0;
@@ -496,19 +510,19 @@ namespace ModbusSlaveSimulation
 
 					for (int j = 0; j <= 10; j++)
 					{
-						if (i == 6553 && j > 6)
+						if (i == 6553 && j > 5)
 							break;
 
 						if (j == 0)
 						{
-							//Show address range up to 365536
+							//Show address range up to 365535
 							if (i == 6553)
-								dgvIR.Rows[i].Cells[j].Value = "3" + (10 * i + 1).ToString().PadLeft(5, '0') + "-" + "3" + (10 * i + 6).ToString().PadLeft(5, '0');
+								dgvIR.Rows[i].Cells[j].Value = "3" + (10 * i + 1).ToString().PadLeft(5, '0') + "-" + "3" + (10 * i + 5).ToString().PadLeft(5, '0');
 							else
 								dgvIR.Rows[i].Cells[j].Value = "3" + (10 * i + 1).ToString().PadLeft(5, '0') + "-" + "3" + (10 * i + 10).ToString().PadLeft(5, '0');
 						}
 						else
-							dgvIR.Rows[i].Cells[j].Value = dataStore.InputRegisters[i * 10 + j - 1];
+							dgvIR.Rows[i].Cells[j].Value = dataStore.InputRegisters[i * 10 + j];
 					}
 				}
 				dgvIRSet = true;
@@ -527,19 +541,19 @@ namespace ModbusSlaveSimulation
 
 					for (int j = 0; j <= 10; j++)
 					{
-						if (i == 6553 && j > 6)
+						if (i == 6553 && j > 5)
 							break;
 
 						if (j == 0)
 						{
-							//Show address range up to 465536
+							//Show address range up to 465535
 							if (i == 6553)
-								dgvHR.Rows[i].Cells[j].Value = "4" + (10 * i + 1).ToString().PadLeft(5, '0') + "-" + "4" + (10 * i + 6).ToString().PadLeft(5, '0');
+								dgvHR.Rows[i].Cells[j].Value = "4" + (10 * i + 1).ToString().PadLeft(5, '0') + "-" + "4" + (10 * i + 5).ToString().PadLeft(5, '0');
 							else
 								dgvHR.Rows[i].Cells[j].Value = "4" + (10 * i + 1).ToString().PadLeft(5, '0') + "-" + "4" + (10 * i + 10).ToString().PadLeft(5, '0');
 						}
 						else
-							dgvHR.Rows[i].Cells[j].Value = dataStore.HoldingRegisters[i * 10 + j - 1];
+							dgvHR.Rows[i].Cells[j].Value = dataStore.HoldingRegisters[i * 10 + j];
 					}
 				}
 				dgvHRSet = true;

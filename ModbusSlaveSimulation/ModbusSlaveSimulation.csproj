@@ -116,10 +116,10 @@
     <None Include="Resources\log4net.dll" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Modbus.dll" />
+    <None Include="Resources\Unme.Common.dll" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Unme.Common.dll" />
+    <None Include="Resources\Modbus.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
