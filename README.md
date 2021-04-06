@@ -1,7 +1,8 @@
 # ModbusSlaveSimulation
-Standalone Windows app supporting Modbus RTU, TCP, UDP and ASCIIoverRTU protocols for simulation.
+Standalone Windows app supporting Modbus RTU, TCP, UDP and ASCIIoverRTU protocols for simulation. Also included is its Mono version (for Linux and possibly Mac OS).
 
 Based on modified [nModbus](https://code.google.com/p/nmodbus/) .NET 3.5 libraries, Copyright (c) 2006 Scott Alexander.
+These are included as a resource for Windows version but are separate for Mono version.
 
 Intended to be used as a quick testing tool. Can be tested with its counterpart [ModbusMaster](https://github.com/GitHubDragonFly/ModbusMaster).
 
@@ -15,13 +16,19 @@ Intended to be used as a quick testing tool. Can be tested with its counterpart 
 
 # Build
 All it takes is to:
-
+## Windows
 - Download and install Visual Studio community edition (ideally 2019).
 - Download and extract the zip file of this project.
 - Open this as an existing project in Visual Studio and, on the menu, do:
   - Build/Build Solution (or press Ctrl-Shift-B).
   - Debug/Start Debugging (or press F5) to run the app.
 - Locate created EXE file in the /bin/Debug folder and copy it over to your preferred folder or Desktop.
+## Mono
+- Make sure that Mono is installed on your computer.
+- Download and extract the zip file of this project and locate Mono archive in the "Mono" folder.
+- Extract 4 files and potentially rename the newly created folder and/or exe file to something shorter if you wish (just to make terminal navigation quicker).
+- Open the terminal, navigate to the folder and type: sudo mono ModbusSlaveSimulation.exe
+- For testing RTU protocols, you can possibly install and use [tty0tty](https://github.com/freemed/tty0tty) virtual ports.
 
 # License
 Licensed under MIT license - see the README.txt file inside the Resources folder.
