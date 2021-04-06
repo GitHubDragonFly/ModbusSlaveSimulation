@@ -16,14 +16,14 @@ Intended to be used as a quick testing tool. Can be tested with its counterpart 
 
 # Build
 All it takes is to:
-## Windows
+## -> For Windows
 - Download and install Visual Studio community edition (ideally 2019).
 - Download and extract the zip file of this project.
 - Open this as an existing project in Visual Studio and, on the menu, do:
   - Build/Build Solution (or press Ctrl-Shift-B).
   - Debug/Start Debugging (or press F5) to run the app.
 - Locate created EXE file in the /bin/Debug folder and copy it over to your preferred folder or Desktop.
-## Mono
+## -> For Mono
 - Make sure that Mono is installed on your computer.
 - Download and extract the zip file of this project and locate Mono archive in the "Mono" folder.
 - Extract 4 files and potentially rename the newly created folder and/or exe file to something shorter if you wish (just to make terminal navigation quicker).
