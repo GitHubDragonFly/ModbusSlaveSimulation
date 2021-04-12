@@ -1,5 +1,5 @@
 # ModbusSlaveSimulation
-Standalone Windows app supporting Modbus RTU, TCP, UDP and ASCIIoverRTU protocols for simulation. Also included is its Mono version (for Linux and possibly Mac OS).
+Standalone Windows app supporting Modbus RTU, TCP, UDP and ASCIIoverRTU protocols for simulation. Also included is its Mono version, for Linux and possibly Mac OS (this is VB Net version so you will also have to install the mono-vbnc package besides for the mono-complete).
 
 Based on modified [nModbus](https://code.google.com/p/nmodbus/) .NET 3.5 libraries, Copyright (c) 2006 Scott Alexander.
 These are included as a resource for Windows version but are separate for Mono version.
@@ -24,7 +24,7 @@ All it takes is to:
   - Debug/Start Debugging (or press F5) to run the app.
 - Locate created EXE file in the /bin/Debug folder and copy it over to your preferred folder or Desktop.
 ## -> For Mono
-- Make sure that Mono is installed on your computer.
+- Make sure that Mono is installed on your computer, both mono-complete and mono-vbnc.
 - Download and extract the zip file of this project and locate Mono archive in the "Mono" folder.
 - Extract 4 files and potentially rename the newly created folder and/or exe file to something shorter if you wish (just to make terminal navigation quicker).
 - Open the terminal, navigate to the folder and type: sudo mono ModbusSlaveSimulation.exe
