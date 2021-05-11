@@ -30,6 +30,8 @@ All it takes is to:
 - Open the terminal, navigate to the folder and type: sudo mono ModbusSlaveSimulation.exe (on Mac you might need to switch to superuser "su" account)
 - For testing RTU protocols, on Linux you can possibly install and use [tty0tty](https://github.com/freemed/tty0tty) virtual ports while on Mac the later OS X versions seem to have pseudo terminals - pairs of devices such as /dev/ptyp3 and /dev/ttyp3.
 
+Note for Mac users: this was tested on an old iMac G5 PowerPC computer with Mono v2.10.2 and was exhibiting odd behaviour in a sense that TCP communication was taking place for as long as I was moving the mouse cursor over the app's window. Since I cannot test it in any other way then it is left for you to experiment.
+
 # License
 Licensed under MIT license - see the README.txt file inside the Resources folder.
 
