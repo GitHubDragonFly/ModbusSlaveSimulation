@@ -10,8 +10,8 @@ Intended to be used as a quick testing tool. Can be tested with its counterpart 
 - All values can be set before the connection is established (Coils, Discrete Inputs, Input Registers, Holding Registers).
 - Discrete Inputs and Input Registers provide read-only access to the Master application but can be manipulated by the user directly in the simulator.
 - Coils and Holding Registers provide read/write access to the Master application and can be manipulated by the user directly in the simulator.
-- For RTU / ASCIIoverRTU protocols, on a single PC, this simulator can use the help of the com0com Windows program to provide virtual serial port pairs.
-- Additional TextBox allows manual input of the serial port (intended for Linux so tty0tty virtual ports could be accessed). This box was removed in Mac Mono version.
+- For RTU / ASCIIoverRTU protocols, on a single PC, this simulator can use the help of the [com0com](https://pete.akeo.ie/search/label/com0com) Windows program to provide virtual serial port pairs.
+- Additional TextBox allows manual input of the serial port (intended for Linux so [tty0tty](https://github.com/freemed/tty0tty) virtual ports could be accessed). This box was removed in Mac Mono version.
 - The library supports Masked Bit Write, function code 22 (0x16H).
 
 # Build
@@ -22,7 +22,8 @@ All it takes is to:
 - Open this as an existing project in Visual Studio and, on the menu, do:
   - Build/Build Solution (or press Ctrl-Shift-B).
   - Debug/Start Debugging (or press F5) to run the app.
-- Locate created EXE file in the /bin/Debug folder and copy it over to your preferred folder or Desktop.
+- Locate created EXE file in the /bin/Debug folder and copy it over to your preferred folder or Desktop
+- For testing RTU protocols use [com0com](https://pete.akeo.ie/search/label/com0com) to create virtual serial ports
 ## -> For Mono
 - Make sure that Mono is installed on your computer, both mono-complete and mono-vbnc for Linux while for Mac you might need to experiment (maybe mono and mono-basic).
 - Download and extract the zip file of this project and locate Mono archive in the "Mono" folder.
