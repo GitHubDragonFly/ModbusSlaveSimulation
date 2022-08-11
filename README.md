@@ -8,7 +8,7 @@ Intended to be used as a quick testing tool. Can be tested with its counterpart 
 
 # Screenshot
 
-![Start Page](screenshots/Modbus Slave Simulation.png?raw=true)
+![Start Page](screenshots/Modbus%20Slave%20Simulation.png?raw=true)
 
 # Functionality
 - All values can be set before the connection is established (Coils, Discrete Inputs, Input Registers, Holding Registers).
