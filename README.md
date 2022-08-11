@@ -6,6 +6,10 @@ These are included as a resource for Windows version but are separate for Mono v
 
 Intended to be used as a quick testing tool. Can be tested with its counterpart [ModbusMaster](https://github.com/GitHubDragonFly/ModbusMaster).
 
+# Screenshot
+
+![Start Page](screenshots/Modbus Slave Simulation.png?raw=true)
+
 # Functionality
 - All values can be set before the connection is established (Coils, Discrete Inputs, Input Registers, Holding Registers).
 - Discrete Inputs and Input Registers provide `read-only` access to the Master application but can be manipulated by the user directly in the simulator.
