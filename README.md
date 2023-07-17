@@ -21,6 +21,7 @@ Intended to be used as a quick testing tool. Can be tested with its counterpart 
 # Build
 All it takes is to:
 ## -> For Windows
+- Either use Windows executable files from the `exe` folder or follow the instructions below to build it yourself.
 - Download and install Visual Studio community edition (ideally 2019).
 - Download and extract the zip file of this project.
 - Open this as an existing project in Visual Studio and, on the menu, do:
