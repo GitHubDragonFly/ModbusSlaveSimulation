@@ -39,7 +39,7 @@ All it takes is to:
 Note for Mac users: this was tested on an old iMac G5 PowerPC computer with Mono v2.10.2. Some odd behaviour was present in a sense that the app was loosing focus thus disrupting continuous TCP communication. There is a text box with red X that you can click to try to maintain focus (if you do something else afterwards then click it again). Since I cannot test it in any other way then it is left for you to experiment.
 
 # License
-Licensed under MIT license - see the README.txt file inside the Resources folder.
+Licensed under MIT license - see also the README.txt file inside the Resources folder.
 
 # Trademarks
 Any and all trademarks, either directly or indirectly mentioned in this project, belong to their respective owners.
