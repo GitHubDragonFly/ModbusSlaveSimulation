@@ -3,6 +3,7 @@ Standalone Windows app supporting Modbus RTU, TCP, UDP and ASCIIoverRTU protocol
 
 It is designed to allow running multiple instances of the app at the same time, just use a different port, example:
 - one instance on IP 127.0.0.1 TCP Port 501 and another instance on IP 127.0.0.1 TCP Port 502
+- the app should service requests from any slave ID
 
 Based on modified [nModbus](https://code.google.com/p/nmodbus/) .NET 3.5 libraries, Copyright (c) 2006 Scott Alexander.
 These are included as a resource for Windows version but are separate for Mono version.
