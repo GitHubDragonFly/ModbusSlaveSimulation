@@ -15,14 +15,17 @@ Intended to be used as a quick testing tool. Can be tested with its counterpart 
 
 # Functionality
 - All values can be set before the connection is established - Coils, Discrete Inputs, Input Registers, Holding Registers.
-- In the Data Grid View, double-click the value to change it - boolean values will flip between 0 and 1.
+- The Data Grid View is set to initially show 20 rows but can be changed within the `Row Count` to show more or all rows if necessary.
+- In the Data Grid View, `I/O Address Range`, double-click the value to change it:
+  - Boolean values will flip between 0 and 1
+  - Uint16 values require unsigned integer value between 0 and 65535
 - Discrete Inputs and Input Registers provide `read-only` access to the Master application and should be manipulated by the user directly in the simulator.
 - Coils and Holding Registers provide `read/write` access to the Master application and can also be manipulated by the user directly in the simulator.
 - For `RTU` `ASCIIoverRTU` protocols, on a single PC, this simulator can use the help of the [com0com](https://pete.akeo.ie/search/label/com0com) Windows program to provide virtual serial port pairs.
 - Additional TextBox allows manual input of the serial port:
-  - Mainly intended for Linux so [tty0tty](https://github.com/freemed/tty0tty) virtual port pairs, like `/dev/tnt0` <=> `/dev/tnt1`, could be accessed.
-  - This box was removed in Mac Mono version.
-- The library supports Masked Bit Write, function code 22 (0x16H).
+  - Mainly intended for Linux so [tty0tty](https://github.com/freemed/tty0tty) virtual port pairs, like `/dev/tnt0` <=> `/dev/tnt1`, could be accessed
+  - This box was removed in Mac Mono version
+- The library also supports Masked Bit Write, function code 22 (0x16H).
 
 # Build
 All it takes is to:
