@@ -1,8 +1,9 @@
 # ModbusSlaveSimulation
 Standalone Windows app supporting Modbus RTU, TCP, UDP and ASCIIoverRTU protocols for simulation. Also included are its Mono versions for Linux and Mac OS X (these are VB Net versions so for Linux you will have to install `mono-complete` and `mono-vbnc` packages while Mac might be different depending on the OS X version).
 
-It is designed to allow running multiple instances of the app at the same time, just use a different port, example:
-- one instance on IP 127.0.0.1 TCP Port 501 and another instance on IP 127.0.0.1 TCP Port 502
+It is designed to allow running multiple instances of the app at the same time, for example:
+- use the same protocol for each instance but with different port numbers -> IP 127.0.0.1 TCP Port 501 and IP 127.0.0.1 TCP Port 502
+- or use a mix of different protocols with help of other tools (like com0com for RTU protocol)
 - the app should service requests for any valid Modbus slave ID
 
 Based on modified [nModbus](https://code.google.com/p/nmodbus/) .NET 3.5 libraries, Copyright (c) 2006 Scott Alexander.
@@ -28,8 +29,8 @@ Intended to be used as a quick testing tool. Can be tested with its counterpart 
   - This box was removed in Mac Mono version
 - The library also supports Masked Bit Write, function code 22 (0x16H).
 
-# Build
-All it takes is to:
+# Usage
+
 ## -> For Windows
 - Either use Windows executable files from the `exe` folder or follow the instructions below to build it yourself.
 - Download and install Visual Studio community edition (ideally 2019).
@@ -39,6 +40,7 @@ All it takes is to:
   - Debug/Start Debugging (or press F5) to run the app.
 - Locate created EXE file in the `/bin/Debug` folder and copy it over to your preferred folder or Desktop
 - For testing RTU protocols use [com0com](https://pete.akeo.ie/search/label/com0com) to create virtual serial ports
+
 ## -> For Mono
 - Make sure that Mono is installed on your computer, both `mono-complete` and `mono-vbnc` for Linux while for Mac you might need to experiment (maybe `mono` and `mono-basic`).
 - Download and extract the zip file of this project and locate Mono archive in the `Mono` folder.
