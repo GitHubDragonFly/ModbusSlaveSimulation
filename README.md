@@ -16,7 +16,7 @@ This is all based on modified [nModbus](https://code.google.com/p/nmodbus/) .NET
 - These are included as a resource for Windows version but are separate for Mono version
 
 Intended to be used as a quick testing tool:
-- Can be tested with its counterpart [ModbusMaster](https://github.com/GitHubDragonFly/ModbusMaster)
+- Can be tested with its counterpart [ModbusMaster](https://github.com/GitHubDragonFly/ModbusMaster) (check the video further below)
 - Or maybe use the [AdvancedHMI](https://www.advancedhmi.com/) software instead since it is highly functional and free.
 
 # Screenshot
@@ -62,6 +62,10 @@ Intended to be used as a quick testing tool:
 - For testing RTU protocols, on Linux you can possibly install and use [tty0tty](https://github.com/freemed/tty0tty) virtual ports while on Mac the later OS X versions seem to have pseudo terminals - pairs of devices such as `/dev/ptyp3` and `/dev/ttyp3`.
 
 Note for Mac users: this was tested on an old iMac G5 PowerPC computer with Mono v2.10.2. Some odd behaviour was present in a sense that the app was loosing focus thus disrupting continuous TCP communication. There is a text box with red X that you can click to try to maintain focus (if you do something else afterwards then click it again). Since I cannot test it in any other way then it is left for you to experiment.
+
+# Video
+
+https://github.com/user-attachments/assets/3058bbad-4691-4670-95d9-b2f011199984
 
 # License
 Licensed under MIT license - see also the README.txt file inside the Resources folder.
