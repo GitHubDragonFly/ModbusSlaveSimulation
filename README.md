@@ -5,6 +5,11 @@ Also included are its Mono versions for Linux and Mac OS X, these are VB Net ver
 - For Linux you will have to install `mono-complete` and `mono-vbnc` packages
 - Mac might be different depending on the OS X version, maybe install `mono` and `mono-basic` packages
 
+If a firewall is enabled then it might prompt you to allow this app to communicate on the network:
+- Normally it should be allowed to communicate on the private network otherwise it might not work properly
+  - Do not allow public access unless you know what you are doing
+- Once the testing is done then remember to remove this app from the firewall's list of allowed apps
+
 The app is designed to allow running multiple instances of the app at the same time, for example:
 - Use the same protocol for each instance but with different port numbers, similar to:
   - IP 127.0.0.1 TCP Port 501 and IP 127.0.0.1 TCP Port 502
