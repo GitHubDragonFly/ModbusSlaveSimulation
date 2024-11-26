@@ -41,8 +41,8 @@ Intended to be used as a quick testing tool:
   - MODBUS device designated as `Master` can send requests to read these values as well as send requests to have these values be modified
   - These values can also be manipulated by the user directly in the simulator if necessary
 - For `RTU` and `ASCIIoverRTU` protocols, on a single PC, this simulator can use the help of:
-  - [com0com](https://pete.akeo.ie/search/label/com0com) Windows program to provide virtual serial port pairs
-  - [tty0tty](https://github.com/freemed/tty0tty) for Linux to provide virtual serial port pairs
+  - [com0com](https://pete.akeo.ie/search/label/com0com) program for Windows to provide virtual serial port pairs
+  - [tty0tty](https://github.com/freemed/tty0tty) program for Linux to provide virtual serial port pairs
 - Additional TextBox allows manual input of the serial port:
   - Mainly intended for Linux so those `tty0tty` virtual port pairs, like `/dev/tnt0` <=> `/dev/tnt1`, could be accessed
   - This box was removed in the Mac Mono version
