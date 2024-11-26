@@ -35,12 +35,16 @@ Intended to be used as a quick testing tool:
   - Boolean values will flip between 0 and 1
   - Uint16 values require unsigned integer value between 0 and 65535
 - Discrete Inputs and Input Registers provide `read-only` access to the Master application:
-  - Their values should be manipulated by the user directly in the simulator
+  - MODBUS device designated as `Master` can ONLY send requests to read these values
+  - These values should be manipulated by the user directly in the simulator otherwise they will not be changing
 - Coils and Holding Registers provide `read/write` access to the Master application:
-  - Their values can also be manipulated by the user directly in the simulator if necessary
-- For `RTU` and `ASCIIoverRTU` protocols, on a single PC, this simulator can use the help of the [com0com](https://pete.akeo.ie/search/label/com0com) Windows program to provide virtual serial port pairs.
+  - MODBUS device designated as `Master` can send requests to read these values as well as send requests to have these values be modified
+  - These values can also be manipulated by the user directly in the simulator if necessary
+- For `RTU` and `ASCIIoverRTU` protocols, on a single PC, this simulator can use the help of:
+  - [com0com](https://pete.akeo.ie/search/label/com0com) Windows program to provide virtual serial port pairs
+  - [tty0tty](https://github.com/freemed/tty0tty) for Linux to provide virtual serial port pairs
 - Additional TextBox allows manual input of the serial port:
-  - Mainly intended for Linux so [tty0tty](https://github.com/freemed/tty0tty) virtual port pairs, like `/dev/tnt0` <=> `/dev/tnt1`, could be accessed
+  - Mainly intended for Linux so those `tty0tty` virtual port pairs, like `/dev/tnt0` <=> `/dev/tnt1`, could be accessed
   - This box was removed in the Mac Mono version
 - The library also supports Masked Bit Write, function code 22 (0x16H or FC22).
 
