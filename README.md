@@ -30,6 +30,8 @@ Intended to be used as a quick testing tool:
 - Can be tested with its counterpart [ModbusMaster](https://github.com/GitHubDragonFly/ModbusMaster) (check the video further below)
 - Or maybe use the [AdvancedHMI](https://www.advancedhmi.com/) software instead since it is highly functional and free.
 
+To brag a little, this app was recently included in the list of [Top 10 Free Modbus Troubleshooting Tools and Software](https://scadaprotocols.com/top-free-modbus-troubleshooting-tools/).
+
 # Screenshot
 
 ![Start Page](screenshots/Modbus%20Slave%20Simulation.png?raw=true)
